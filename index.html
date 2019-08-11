@@ -517,7 +517,28 @@
 <p>The data used in this project is collected from <a href="http://www.gunviolencearchive.org/reports" target="_blank" rel="noopener">Gun Violence Archive</a>.</p>
 <h2 id="Statistical-Analysis"><a href="#Statistical-Analysis" class="headerlink" title="Statistical Analysis"></a>Statistical Analysis</h2><p>We can look at how many accidental deaths happen each day. If accidental deaths happened as random events, # of accidental deaths/day would follow a poisson distribution.</p>
 <p><a href="mass_shooting_distri.jpg"># of Accidental Deaths/Day from Feb 2017 to Jan 2018</a></p>
-<p>|# per day     |0  |1  |2 |3 |4 |5|<br>|Observed Freq.|109|133|77|29|16|1|</p>
+<table>
+<thead>
+<tr>
+<th>Num of Accidental Death/Day</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Observed Freq.</td>
+<td>109</td>
+<td>133</td>
+<td>77</td>
+<td>29</td>
+<td>16</td>
+<td>1</td>
+</tr>
+</tbody></table>
 <p>Using the method of maximum likelihood, we can prove that the parameter $k$ of the assumed poisson distribution is the sample mean. Then, take the method of Null Hypothesis Pearson’s Test, the poisson distribtution parameter $k$ can be calculated to be $1.21$, with a 95% level of significance.</p>
 <p>Besides, relation between acidental deaths and weekdays or monthes can be easily proved as following a uniform distribution.</p>
 
