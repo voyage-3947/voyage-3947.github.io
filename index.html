@@ -288,7 +288,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/11/wireshark-trace/" itemprop="url">wireshark-trace</a></h1>
+                <a class="post-title-link" href="/2019/08/11/wireshark-trace/" itemprop="url">Network Packet Trace Analysis</a></h1>
         
 
         <div class="post-meta">
@@ -310,6 +310,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/projects/" itemprop="url" rel="index">
+                    <span itemprop="name">projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -340,7 +362,19 @@
       
         
           
-            
+            <p>This project focuses on analysis of the computer network procedure, especially for the TCP/IP protocal stack. Here, I use the tool of Wireshark to capture traces of a network packet.</p>
+<p>Here are some selected conclusion:</p>
+<ul>
+<li><p>Layer encryption:<br>We should add a secure layer below the layer which will be added encryption. For example, if we want to add encryption to the TCP layer, we should add a secure layer between TCP and IP layers. Also, we can encrypt the highest layer. For example, add SSL between the HTTP and TCP layers. Then, every time for uploading, the higher layer message should pass down to the lower layer, and then the lower layer should append headers to the message. Then comes the secure layer add encryption to the appended headers. For downloading, the message will first pass through the decryption layer. Then, the decrypted message will pass through the lower layer normally, and after that, the higher layer. </p>
+</li>
+<li><p>Layer compression:<br> Just like adding encryption, adding compression to a layer should add a compression layer below it. For example, the presentation layer in the OSI-model, adds compression to the application layer. We can add one compression layer to the layer which we want to add compression to. Since there are boundaries between a lower-layer header and the message from the upper layer, the new layer can set a rule to only do compression for the header part. And when downloading, the new layer do de-compression for the header part again. The normal de-compressed message will then be passed to the lower layer, then the higher one.</p>
+</li>
+<li><p>TCP reliability:<br> There are several kinds of conditions which may be raised by a segement loss. The first one is duplicated ACK. Dup ACK occurs because when segements are lost, the receiver may receive some frames with a sequence number larger than expected, and it’ll then send an ACK with the expected sequence number, causing duplicated ACK. Theoratically, 3 continuous Dup ACKs will cause a retransmission. When Wi-Fi connection is cut down, a trace of such can be captured, and when the Wi-Fi connection was rebuilt, TCP triggers a fast retransmission. Therefore, it still can be said that Dup ACKs will trigger retransmission.<br> Notice that here TCP triggers a fast retransmission, not a ordinary transmission. This is because transmission is sent out when RTO is expired, (the sender doesn’t receive the corresponding ACK within the RTO), but when series of Dup ACKs show up, the sender will regard that frame as a lost one, though the RTO is still not expired.<br> The Wi-Fi connection’s rebuildment can be proved by the analysis information in the next frame: it contains a new RTT estimation, (those frames sent out when the connection isbreakdown don’t contain an updated RTT value, but only the initial RTT value).<br> The second problem may come up is TCP out-of-order, which will happen when the last received frame has a sequence number smaller than that of a segment received before. TCP may also do retransmission because of expired RTO. RTO is calculated by RTT. Since RTT changes a lot, RTO changes with it. </p>
+</li>
+<li><p>Concurrent TCP connection:<br> When concurrent connections are built up, the client will handle two connections together, which is based on SSL. SSL helps listen to all these “threads”, to assign network resources and do management. In addition, SSL helps encrypt application data and exchange connection key for client and server. Also, to keep all the connections up, there is another interesting mechanism called TCP keep-alive. With keep-alive, TCP connection can be kept up when there is no communication between the specific client and server, (for example, when the client is communicating with another server), it’ll reduce the times to set up or release a connection, and enhance the efficiency. When several connections are set up, there’ll unavoidably be collisions and packet loss. When a segment loss is found, TCP will start retransmission / fast retransmission.</p>
+</li>
+</ul>
+
           
         
       
