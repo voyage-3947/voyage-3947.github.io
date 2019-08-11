@@ -362,7 +362,18 @@
       
         
           
-            <h2 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h2>
+            <h2 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h2><p>To enhance the utilization of wind power and make wind power arrangement more convenient, we need a high-precise wind power forecasting tool. Moreover, due to the fact that it will take lots of unneccessary time and repeated work if we build different prediction tools for different wind farm, the tool is expected to be generalized.</p>
+<p>In this project, our focus is set on ultra-short-term (within 4 hours) wind power prediction. The project objectives are:</p>
+<ul>
+<li>Build a genralized prediction tool which can be applied to most kinds of wind farm.</li>
+<li>The forecasting result is with high accuracy.</li>
+<li>The tool will be integrated to the industrial platform GenPro developed by CyberInsight.</li>
+</ul>
+<h2 id="Design-and-Implementation"><a href="#Design-and-Implementation" class="headerlink" title="Design and Implementation"></a>Design and Implementation</h2><p>The wind power of an entire wind farm can be predicted as a whole, or it can be predicted as the sum of each turbine. Considering the interaction of neighbor turbines, we choose to take the entire wind farm as a whole predict target.</p>
+<p>The simplest model is to use linear regression with transformation. For example, <code>P ~ $v^3$</code>, where P represents wind power and v represents wind speed. This method is with low accuracy, but easy to implement. So, we take it as a toy model, to figure out the relationship between wind power and given features.</p>
+<p>The input dataset is with millions of data point and more than twenty features, including wind speed, wind direction, pressure, humidity, <em>etc</em>. If training with all features and such a large dataset, not only it will take so much time, but also overfitting is tend to happen. During this procedure, we have tried to use decision tree model to sifting highly correlated features. To accelerate the training efficiency, we tried to use the method of batch processing. Finally, we have choose to use the model of deep neural network with logistic regression and SVM to do the forecast.</p>
+<p>The tool is wrapped with an HTML5 interface, and support real-time data prediction with visualized forecasting result.</p>
+
           
         
       
