@@ -79,13 +79,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yili&#39;s Realm">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta name="description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as *add*, *and*, *slt*, *lw*, *bne*, etc.  Be">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Model MIPS Computer">
+<meta property="og:url" content="http://yoursite.com/2016/12/20/Model-MIPS-CPU/index.html">
 <meta property="og:site_name" content="Yili&#39;s Realm">
+<meta property="og:description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as *add*, *and*, *slt*, *lw*, *bne*, etc.  Be">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2016/12/20/Model-MIPS-CPU/images/MIPS_pipeline.jpg">
+<meta property="og:updated_time" content="2019-08-11T11:19:01.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yili&#39;s Realm">
+<meta name="twitter:title" content="Model MIPS Computer">
+<meta name="twitter:description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as *add*, *and*, *slt*, *lw*, *bne*, etc.  Be">
+<meta name="twitter:image" content="http://yoursite.com/2016/12/20/Model-MIPS-CPU/images/MIPS_pipeline.jpg">
 
 
 
@@ -115,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/">
+  <link rel="canonical" href="http://yoursite.com/2016/12/20/Model-MIPS-CPU/">
 
 
 
 
 
-  <title>Archive | Yili's Realm</title>
+  <title>Model MIPS Computer | Yili's Realm</title>
   
 
 
@@ -140,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,72 +260,175 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 1 post. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/20/Model-MIPS-CPU/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yili Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yili's Realm">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/06/22/Model-MIPS-CPU/" itemprop="url">
-              
-                <span itemprop="name">Model MIPS Computer</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Model MIPS Computer</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-06-22T18:26:07+08:00" content="2017-06-22">
-          06-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-20T18:26:07+08:00">
+                2016-12-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/projects/" itemprop="url" rel="index">
+                    <span itemprop="name">projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Problem-definition"><a href="#Problem-definition" class="headerlink" title="Problem definition"></a>Problem definition</h2><p>The target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as <code>*add*</code>, <code>*and*</code>, <code>*slt*</code>, <code>*lw*</code>, <code>*bne*</code>, etc. </p>
+<p>Besides, forwarding should be implemented in the pipelined structure to handle data and control hazards.</p>
+<p>The processor will be synthesized by using Xilinx synthesis tool, and run on an FPGA board.</p>
+<h2 id="Design-and-Implementation"><a href="#Design-and-Implementation" class="headerlink" title="Design and Implementation"></a>Design and Implementation</h2><p>Due to the fact that different components fulfill different functions, the work can then be divided into two parts: design of components and design of integration.</p>
+<p>The following functional components can be extracted from the architecture:</p>
+<p>Instruction Fetch stage (<strong>IF</strong>):</p>
+<ul>
+<li><em>PC</em> stores instruction addresses.</li>
+<li><em>Instruction memory</em> stores machine codes.</li>
+</ul>
+<p>Instruction Decode stage (<strong>ID</strong>):</p>
+<ul>
+<li><em>Register</em> stores the numbers.</li>
+<li><em>Sign-extension</em> sign-extends immediate numbers.</li>
+<li><em>Control module</em> generates all control signals.</li>
+<li><em>Hazard detection</em> detects possible data/control hazard.</li>
+</ul>
+<p>Execute stage (<strong>EX</strong>):</p>
+<ul>
+<li><em>ALU</em> calculates the results based on inputs.</li>
+<li><em>ALU Control</em> generates ALU operation signals.</li>
+<li><em>Forwarding</em> generates forwarding control signals.</li>
+</ul>
+<p>Memory Stage (<strong>MEM</strong>):</p>
+<ul>
+<li>Data memory stores all data.</li>
+</ul>
+<p>After that, these components are integreted with the pipeline registers.</p>
+<p><img src="./images/MIPS_pipeline.jpg" alt="Pipelined implementation of MIPS architecture"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
 
       
 
-    </div>
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +436,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -347,8 +460,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -423,6 +545,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-definition"><span class="nav-number">1.</span> <span class="nav-text">Problem definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-and-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Design and Implementation</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -563,6 +701,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
