@@ -79,14 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="Problem DefinitionThis is an analysis concentrated on cases of firearms-related accidental deaths in the United States. The target is to find if there is a predictable pattern of mass shootings. The d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mass Shooting Predictable Pattern">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/predictable-pattern-shooting/index.html">
 <meta property="og:site_name" content="Yili&#39;s Realm">
+<meta property="og:description" content="Problem DefinitionThis is an analysis concentrated on cases of firearms-related accidental deaths in the United States. The target is to find if there is a predictable pattern of mass shootings. The d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-10T14:32:47.145Z">
+<meta property="og:updated_time" content="2019-08-11T13:11:26.480Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Mass Shooting Predictable Pattern">
+<meta name="twitter:description" content="Problem DefinitionThis is an analysis concentrated on cases of firearms-related accidental deaths in the United States. The target is to find if there is a predictable pattern of mass shootings. The d">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/predictable-pattern-shooting/">
 
 
 
 
 
-  <title>categories | Yili's Realm</title>
+  <title>Mass Shooting Predictable Pattern | Yili's Realm</title>
   
 
 
@@ -257,33 +260,170 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/predictable-pattern-shooting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yili Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yili's Realm">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">Mass Shooting Predictable Pattern</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-28T00:43:55+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/projects/" itemprop="url" rel="index">
+                    <span itemprop="name">projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h2><p>This is an analysis concentrated on cases of firearms-related accidental deaths in the United States. The target is to find if there is a predictable pattern of mass shootings.</p>
+<p>The data used in this project is collected from <a href="http://www.gunviolencearchive.org/reports" target="_blank" rel="noopener">Gun Violence Archive</a>.</p>
+<h2 id="Statistical-Analysis"><a href="#Statistical-Analysis" class="headerlink" title="Statistical Analysis"></a>Statistical Analysis</h2><p>We can look at how many accidental deaths happen each day. If accidental deaths happened as random events, # of accidental deaths/day would follow a poisson distribution.</p>
+<p><a href="mass_shooting_distri.jpg"># of Accidental Deaths/Day from Feb 2017 to Jan 2018</a></p>
+<p>|# per day     |0  |1  |2 |3 |4 |5|<br>|Observed Freq.|109|133|77|29|16|1|</p>
+<p>Using the method of maximum likelihood, we can prove that the parameter $k$ of the assumed poisson distribution is the sample mean. Then, take the method of Null Hypothesis Pearson’s Test, the poisson distribtution parameter $k$ can be calculated to be $1.21$, with a 95% level of significance.</p>
+<p>Besides, relation between acidental deaths and weekdays or monthes can be easily proved as following a uniform distribution.</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/20/Model-MIPS-CPU/" rel="next" title="Model MIPS Computer">
+                <i class="fa fa-chevron-left"></i> Model MIPS Computer
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/10/SC/" rel="prev" title="Stochastic Circuits Optimization">
+                Stochastic Circuits Optimization <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -316,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -392,6 +541,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Definition"><span class="nav-number">1.</span> <span class="nav-text">Problem Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statistical-Analysis"><span class="nav-number">2.</span> <span class="nav-text">Statistical Analysis</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
