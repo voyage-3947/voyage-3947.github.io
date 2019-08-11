@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as add, and, slt, lw, bne, etc.  Besides, for">
+<meta name="description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as *add*, *and*, *slt*, *lw*, *bne*, etc.  Be">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Model MIPS Computer">
 <meta property="og:url" content="http://yoursite.com/2017/06/22/Model-MIPS-CPU/index.html">
 <meta property="og:site_name" content="Yili&#39;s Realm">
-<meta property="og:description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as add, and, slt, lw, bne, etc.  Besides, for">
+<meta property="og:description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as *add*, *and*, *slt*, *lw*, *bne*, etc.  Be">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2017/06/22/Model-MIPS-CPU/images/MIPS_pipeline.jpg">
-<meta property="og:updated_time" content="2019-08-11T10:38:13.931Z">
+<meta property="og:updated_time" content="2019-08-11T11:16:55.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Model MIPS Computer">
-<meta name="twitter:description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as add, and, slt, lw, bne, etc.  Besides, for">
+<meta name="twitter:description" content="Problem definitionThe target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as *add*, *and*, *slt*, *lw*, *bne*, etc.  Be">
 <meta name="twitter:image" content="http://yoursite.com/2017/06/22/Model-MIPS-CPU/images/MIPS_pipeline.jpg">
 
 
@@ -363,9 +363,34 @@
       
 
       
-        <h2 id="Problem-definition"><a href="#Problem-definition" class="headerlink" title="Problem definition"></a>Problem definition</h2><p>The target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as <code>add</code>, <code>and</code>, <code>slt</code>, <code>lw</code>, <code>bne</code>, etc. </p>
+        <h2 id="Problem-definition"><a href="#Problem-definition" class="headerlink" title="Problem definition"></a>Problem definition</h2><p>The target is to model both single-cycle and pipelined implementation of MIPS computer in Verilog, which support MIPS instructions, such as <code>*add*</code>, <code>*and*</code>, <code>*slt*</code>, <code>*lw*</code>, <code>*bne*</code>, etc. </p>
 <p>Besides, forwarding should be implemented in the pipelined structure to handle data and control hazards.</p>
 <p>The processor will be synthesized by using Xilinx synthesis tool, and run on an FPGA board.</p>
+<h2 id="Design-and-Implementation"><a href="#Design-and-Implementation" class="headerlink" title="Design and Implementation"></a>Design and Implementation</h2><p>Due to the fact that different components fulfill different functions, the work can then be divided into two parts: design of components and design of integration.</p>
+<p>The following functional components can be extracted from the architecture:</p>
+<p>Instruction Fetch stage (<strong>IF</strong>):</p>
+<ul>
+<li><em>PC</em> stores instruction addresses.</li>
+<li><em>Instruction memory</em> stores machine codes.</li>
+</ul>
+<p>Instruction Decode stage (<strong>ID</strong>):</p>
+<ul>
+<li><em>Register</em> stores the numbers.</li>
+<li><em>Sign-extension</em> sign-extends immediate numbers.</li>
+<li><em>Control module</em> generates all control signals.</li>
+<li><em>Hazard detection</em> detects possible data/control hazard.</li>
+</ul>
+<p>Execute stage (<strong>EX</strong>):</p>
+<ul>
+<li><em>ALU</em> calculates the results based on inputs.</li>
+<li><em>ALU Control</em> generates ALU operation signals.</li>
+<li><em>Forwarding</em> generates forwarding control signals.</li>
+</ul>
+<p>Memory Stage (<strong>MEM</strong>):</p>
+<ul>
+<li>Data memory stores all data.</li>
+</ul>
+<p>After that, these components are integreted with the pipeline registers.</p>
 <p><img src="./images/MIPS_pipeline.jpg" alt="Pipelined implementation of MIPS architecture"></p>
 
       
@@ -530,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-definition"><span class="nav-number">1.</span> <span class="nav-text">Problem definition</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-definition"><span class="nav-number">1.</span> <span class="nav-text">Problem definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-and-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Design and Implementation</span></a></li></ol></div>
             
 
           </div>
