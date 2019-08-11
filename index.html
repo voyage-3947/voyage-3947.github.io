@@ -269,6 +269,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/SC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yili Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yili's Realm">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/SC/" itemprop="url">Stochastic Circuits Optimization</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T09:10:22+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/projects/" itemprop="url" rel="index">
+                    <span itemprop="name">projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This is an research work, and here is the link to the paper:<br><a href="https://ieeexplore.ieee.org/abstract/document/8382222" target="_blank" rel="noopener"><strong><em>Simultaneous Area and Delay Optimization for Stochastic Circuits by D Flip-flop Insertion</em></strong></a></p>
+<h2 id="Problem-definition"><a href="#Problem-definition" class="headerlink" title="Problem definition"></a>Problem definition</h2><h3 id="Stochastic-Computing"><a href="#Stochastic-Computing" class="headerlink" title="Stochastic Computing"></a>Stochastic Computing</h3><p>This is an computing technique using digital circuits. The idea is to encode real values through the probabilities of ones on bit streams, and then performs arithmetic computation. </p>
+<h4 id="Bit-Stream-Representation-of-Real-Values"><a href="#Bit-Stream-Representation-of-Real-Values" class="headerlink" title="Bit Stream Representation of Real Values"></a>Bit Stream Representation of Real Values</h4><p>For example, the bit stream <code>10011010</code> can represent 0.5, or 1/2 since there are 4 ones in the 8-bit-long bit stream.</p>
+<h4 id="Arithmetic-Computation"><a href="#Arithmetic-Computation" class="headerlink" title="Arithmetic Computation"></a>Arithmetic Computation</h4><p>AND gate can perform multiplication <code>a·b</code> while OR gate can perform <code>a + b - a·b</code>.<br>For example, given two bit streams, <code>a = 11010111</code> represents 6/8 and <code>b = 11001010</code> represents 4/8. Let them go through an AND gate bit by bit, the output will be <code>c = 11000010</code> represents 3/8, where <code>c = a·b</code>.</p>
+<h3 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h3><p>We want to reduce the computation time and large hardware overhead to generate independent stochastic bit streams. </p>
+<p>It seems that this can be addressed by sharing the stochastic number generator (SNG). However, this will lead to the maximal correlation of the generated stochastic bit streams. If so, consider the example of AND gate above, <code>a = 11010111</code> and <code>b = 11000110</code>, still represents 6/8 and 4/8. However, the output will become <code>c = 11000110</code> represents 4/8, or 1/2. In this situation, the AND gate cannot perform multiplication any longer, but give out the result of <code>min{a, b}</code>.</p>
+<h3 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h3><p>To ensure that the stochastic circuit can give out the expected result, the input stochastic bit streams have to be decorrelated. We can fulfill this target through insertion of D-Flip-Flops (DFFs).</p>
+<p>The insertion of DFFs can potentially break a critical path, and hence, reduce the circuit delay.</p>
+<p>Further, we hope that under the premise of functional correctness, least number of DFFs should be inserted to reduce area overhead. </p>
+<p>Therefore, the point is how to ensure that with least number of DFFs, the circuit still has an equvalent functionality. For a given circuit, we list a set of linear equalities and inequalities that guarantees the functional equivalence, based on the method to obtain the stochastic function of a stochastic circuit with DFF inserted. And the solution is calculated with the help of integer linear programming (ILP).</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/20/Model-MIPS-CPU/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -474,7 +625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
